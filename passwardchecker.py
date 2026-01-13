@@ -15,29 +15,30 @@ def passcheck(passward):
   bool(d4)
 ])
   if score==5:
-   st.success(f'**{passward}** is strong passward ✅')
+   st.success(f'**{passward}** is strong password ✅')
   elif score>=3:
-   st.warning(f'**{passward}** is medium passward ⚠️')
+   st.warning(f'**{passward}** is medium password ⚠️')
   else:
-   st.error(f'**{passward}** is weak passward ❌')
+   st.error(f'**{passward}** is weak password ❌')
 #lets use streamlit 
 st.set_page_config(layout='wide')
 st.title('🔒password checker')
 st.caption('Mr.jamal')
 with st.form('form'):
- passward=st.text_input('🔑 Password Query',placeholder='enter passward here')
+ passward=st.text_input('🔑 Password Query',placeholder='enter password here')
  button=st.form_submit_button('Check',type='primary')
 if passward and button:
  passcheck(passward)
 elif button:
-  st.success('Enter passward first')
+  st.success('Enter password first')
   
 #lets add instruction
-with st.expander("💡 Click here for Strength Instructions"):
+with st.expander("💡 Click here for Strong password Instructions"):
     st.markdown("""
     - **Length:** 8 or more characters
     - **Numbers:** At least one digit (0-9)
     - **Casing:** Mix of UPPER and lower case
     - **Symbols:** Include chars like @, #, $, %
     """)
+
   
